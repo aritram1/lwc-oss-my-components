@@ -1,0 +1,19 @@
+<template>
+    <div class="container">
+        <div class="banner">
+            Winners
+        </div>
+        <div class="tdatacontainer">
+            <template for:each={timelinedata} for:item="each">
+                <div class="tile" key={each.name}>
+                    <div class="row">
+                        <div class="tile tile__info"> {each.winner} </div>
+                    </div>
+                    <div class="row">
+                        <div class="tile tile__year"> {each.year} </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

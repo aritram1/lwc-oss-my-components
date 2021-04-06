@@ -1,0 +1,49 @@
+div, span{
+    /* border : 1px solid black; */
+}
+.container{
+    /* display: flex;
+    flex-direction: row; */
+    display: grid;
+    grid-auto-flow: column;
+}
+.banner{
+    background-color: aqua;
+    border-radius: 5%;
+    margin: 5px;
+    text-align: center;
+    padding-top: 35%;
+}
+.tdatacontainer{
+    display: grid;
+    grid-auto-flow: column; 
+}
+.row{
+    display: flex;
+    justify-content: center;/* HORIZONTAL */
+    align-items: center;/* VERTICAL */
+}  
+.tile{
+    background-color: bisque;
+    text-align: center;
+    border-radius: 5%;
+    margin: 5px;
+}
+
+.tile__info{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5%;
+    color: rgb(61, 25, 95);
+    width: 100px;
+}
+
+.tile__year{
+    background-color: #a02bd680;
+    margin: 5px;
+    color: white;
+    border: 1px dotted purple;
+    border-radius: 5%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
