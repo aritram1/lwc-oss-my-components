@@ -21,7 +21,7 @@ The source files are located in the [`src`] folder. The web component (app) is w
 # Screenshots
 
 ## App home screen
-![AppHomePage.png](https://github.com/aritram1/lwc-rest-explorer/blob/main/src/client/modules/my/postman/Demo.png?raw=true)
+![AppHomePage.png](https://github.com/aritram1/lwc-oss-my-components/blob/main/src/client/resources/AppHomePage.png)
 
 ## Add an activity screen
-![AddNewActivity.png](https://github.com/aritram1/lwc-rest-explorer/blob/main/src/client/modules/my/postman/Demo.png?raw=true)
+![AddNewActivity.png](https://github.com/aritram1/lwc-oss-my-components/blob/main/src/client/resources/AddNewActivity.png)
