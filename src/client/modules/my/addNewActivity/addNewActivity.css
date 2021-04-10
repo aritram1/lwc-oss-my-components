@@ -1,0 +1,94 @@
+:host{
+    --popup-header-bgcolor : #b3daf1e6;
+    --popup-content-bgcolor : hsl(202, 67%, 74%);
+    --popup-margin-left-right : 20%;
+    --popup-margin-top-bottom : 10%;
+    --overlay-bgcolor :  #4e6ac5e6;
+}
+
+.overlay{
+    background-color: var(--overlay-bgcolor);
+    position: fixed; /* Sit on top of the page content */
+    display: block;
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    /*right: 0;
+    bottom: 0; */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+}
+
+.popup{
+    /* border-radius: 10%; */
+    /* background-color: var(--popup-bgcolor); */
+    margin : var(--popup-margin-top-bottom) var(--popup-margin-left-right);
+}
+
+.popup__header{
+    /* border: 2px solid yellow; */
+    /* color: white; */
+    /* font-style: italic; */
+    /* margin: 2px; */
+    /* float: center; */
+    top: 2px;
+    left: 2px;
+    background-color: var(--popup-header-bgcolor);
+
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 20fr 1fr;
+
+    border-radius: 5px;
+    /* float: right; */
+}
+
+.popup__title{
+    font-size: larger;
+    padding: 5px;
+    margin: 5px;
+    color: black;
+}
+.popup__hidebutton{
+    background-color: white;
+    font-size: larger;
+    cursor: pointer;
+    /* float: right; */
+    color: black;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 15%;
+}
+
+
+.popup__content{
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: var(--popup-content-bgcolor);
+    /* display: grid; */
+    /* grid-template-columns: 2fr 10fr; */
+    /* align-items: center; */
+}
+
+.popup__content > .popup__field {
+    margin: 6px;
+    padding: 4px;
+    display: grid;
+}
+
+.popup__buttons{
+    margin: 4px;
+    padding: 4px;
+    display: grid;
+    grid-auto-flow: column;
+    width:10%;
+    grid-gap: 5px;  
+}
+
+.popup__field{
+    /* //TBD */
+}

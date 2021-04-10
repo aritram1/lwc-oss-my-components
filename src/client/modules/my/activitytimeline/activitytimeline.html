@@ -1,0 +1,35 @@
+<template>
+    <div class="container">
+        <div class="appname"> Activity Timeline </div>
+        <div class="container__buttons">
+            <input type="button" value="Clear" onclick={handleClear}/>
+            <input type="button" value="Add default" onclick={handleAddDefault}/>
+            <input type="button" value="Add New" onclick={handleAddNew}/>
+        </div>
+        <template if:false={timelineAvailable}>
+            <div class="timeline__empty">
+               It seems no entry is present at the moment. Try clicking Add default
+            </div>
+        </template>
+        <template if:true={timelineAvailable}>
+            <template for:each={timelinedata} for:item="each">
+                <div class="item" key={each.id}>
+                    <div class="item__icon">
+                        <img src={each.image}/>
+                    </div>
+                    <div class="info">
+                        <div class="info__title">{each.title}</div>
+                        <div class="info__time">{each.time}</div>
+                        <div class="info__type">{each.type}</div>
+                        <div class="info__detail">{each.detail}</div>
+                    </div>
+                </div>
+            </template>
+        </template>
+        <template if:true={showAddNewScreen}>
+            <div class="overlay">
+                <my-add-new-activity onhide={handleHideAddNewScreen} onsaveactivity={handleSaveActivity}></my-add-new-activity>
+            </div>
+        </template>
+    </div>
+</template>

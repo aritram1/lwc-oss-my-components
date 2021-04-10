@@ -1,0 +1,42 @@
+<template>
+    <div class="overlay">
+        <div class="popup">
+            <div class="popup__header">
+                <div class="popup__title"> Add New activity </div>
+                <div class="popup__hidebutton" onclick={handleHide}> X </div>
+            </div>
+            <div class="popup__content">
+                <div class="popup__field">
+                    <span>Title</span>
+                    <input type="text" data-name="title" placeholder="Enter title here"/>
+                </div>
+                <div class="popup__field">
+                    <span>Time</span>
+                    <input type="text" value={time} data-name="time" placeholder="Enter time here"/>
+                </div>
+                <div class="popup__field">
+                    <span>Select Type</span>
+                    <select onclick={handleCaptureActivityType}>
+                    <!-- <select> -->
+                        <option value="Call">Call</option>
+                        <option value="Email">Email</option>
+                        <option value="Lunch">Lunch</option>
+                    </select>
+                </div>
+                <div class="popup__field">
+                    <span>Detail</span>
+                    <textarea data-name="detail" 
+                              rows="10" cols="30" 
+                              placeholder="Enter details here, Instead of tabs, use spaces for indentation">
+                        {detail}
+                    </textarea>
+                </div>
+
+                <div class="popup__buttons">
+                    <input type="button" value="Save" onclick={handleSave}/>
+                    <input type="button" value="Cancel" onclick={handleHide}/>    
+                </div>            
+            </div>  
+        </div>
+    </div>
+</template>

@@ -1,11 +1,14 @@
-div, span{
-    /* border : 1px solid black; */
+my-timeline{
+    border: 1px solid red;
 }
 .container{
     /* display: flex;
     flex-direction: row; */
     display: grid;
     grid-auto-flow: column;
+}
+.grid-autoflow-row{
+    grid-auto-flow: row;
 }
 .banner{
     background-color: aqua;
