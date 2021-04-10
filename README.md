@@ -1,12 +1,4 @@
-# A collection of LWCOSS based components
-
-See it live here []
-
-# Screenshots
-
-
-
-# My components
+# My LWCOSS components
 This is a collection of HTML and LWCOSS based components [`View Live`](https://aritram1.github.io/lwc-oss-my-components/)
 
 # How to start?
