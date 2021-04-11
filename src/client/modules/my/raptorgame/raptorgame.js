@@ -17,6 +17,7 @@ export default class RaptorGame extends LightningElement {
     circleTimerId;
     speed=0;
     rpm=0;
+    currentShape='';
 
     top=0;
 
@@ -96,8 +97,8 @@ export default class RaptorGame extends LightningElement {
 
     // eslint-disable-next-line no-unused-vars
     handleStopSpin(event){
-        console.log('Timer id->' + this.timerId);
-        clearInterval(this.timerId);
+        console.log('Triangle Timer id->' + this.triangleTimerId);
+        clearInterval(this.triangleTimerId);
         this.angle = 0;
         this.template.querySelectorAll('.triangles > p').forEach(el => {
             el.style.transform = `rotate(0deg)`;
@@ -119,5 +120,33 @@ export default class RaptorGame extends LightningElement {
             });
             if(this.top === 120) this.top = 0;
         },DELAY);
+    }
+
+    // eslint-disable-next-line no-unused-vars
+    handleCircleStop(event){
+        console.log('Timer id->' + this.timerId);
+        clearInterval(this.timerId);
+        this.angle = 0;
+        this.template.querySelectorAll('.circles > p').forEach(el => {
+            el.style.top = '0px';
+        });
+    }
+
+    // eslint-disable-next-line no-unused-vars
+    handleShapeChange(event){
+        this.template.querySelectorAll('.triangles > p').forEach(el => {
+            if(el.classList.contains('triangle')){
+                el.classList.toggle('triangle');
+                el.classList.add('pacman');
+            }
+            else if(el.classList.contains('pacman')){
+                el.classList.toggle('pacman');
+                el.classList.add('trapezium');
+            }
+            else if(el.classList.contains('trapezium')){
+                el.classList.toggle('trapezium');
+                el.classList.add('triangle');
+            }
+        });
     }
 }

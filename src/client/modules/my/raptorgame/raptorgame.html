@@ -13,6 +13,7 @@
                     <lightning-button label="Clear" slot="actions" onclick={handleClearTriangles}></lightning-button>
                     <lightning-button label="Spin" slot="actions" onclick={handleStartSpin}></lightning-button>
                     <lightning-button label="Stop" slot="actions" onclick={handleStopSpin}></lightning-button>
+                    <lightning-button label="Change Shape" slot="actions" onclick={handleShapeChange}></lightning-button>
                 </lightning-button-group>
                 <p slot="footer">{countTriangle} triangles are created, current rotation speed around {rpm} RPM.</p>  
                 <!-- <lightning-input disabled type="number" name="input1" label="Rotate by" value={angle} onchange={handleRotation} min="0" max="100"></lightning-input> -->
@@ -32,6 +33,7 @@
                     <lightning-button label="Create Circle" slot="actions" onclick={handleCreateCircle}></lightning-button>
                     <lightning-button label="Clear" slot="actions" onclick={handleClearCircles}></lightning-button>
                     <lightning-button label="Move" slot="actions" onclick={handleCircleMove}></lightning-button>
+                    <lightning-button label="Stop" slot="actions" onclick={handleCircleStop}></lightning-button>
                 </lightning-button-group>
                 <p slot="footer">{countCircle} circles are created</p>
                 <div class="circles">

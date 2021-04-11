@@ -2,13 +2,43 @@
    box-sizing: border-box;
 }
 
-
 .triangle{
     height : 0px;
     width : 0px;
     /* border-top: 50px solid grey; */
     border-right: 50px solid teal transparent;
-    border-bottom: 50px solid red transparent;
+    border-bottom: 50px solid red;
+    border-left: 50px solid green transparent;
+    margin: 50px;
+}
+
+
+.hourglass{
+    height : 0px;
+    width : 0px;
+    border-top: 50px solid blue;
+    border-right: 50px solid teal transparent;
+    border-bottom: 50px solid red;
+    border-left: 50px solid green transparent;
+    margin: 50px;
+}
+
+.trapezium{
+    height : 0px;
+    width : 0px;
+    /* border-top: 50px solid grey; */
+    border-right: 50px solid teal transparent;
+    border-bottom: 50px solid red;
+    border-left: 50px solid green;
+    margin: 50px;
+}
+
+.pacman{
+    height : 0px;
+    width : 0px;
+    border-top: 50px solid grey;
+    border-right: 50px solid teal transparent;
+    border-bottom: 50px solid red;
     border-left: 50px solid green;
     margin: 50px;
 }
