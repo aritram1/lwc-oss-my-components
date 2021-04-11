@@ -1,4 +1,5 @@
 import { createElement } from 'lwc';
+import '@lwc/synthetic-shadow';
 import MyApp from 'my/app';
 
 const app = createElement('my-app', { is: MyApp });
