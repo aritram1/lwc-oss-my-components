@@ -1,6 +1,24 @@
 <template>
-   <!-- <my-timeline></my-timeline> -->
-   <!-- <my-activitytimeline></my-activitytimeline> -->
-   <my-raptorgame></my-raptorgame>
+   
+   <lightning-combobox
+      name="typeSelector"
+      label="Type"
+      value={value}
+      placeholder="Select type"
+      options={allTypes}
+      onchange={handleChange}>
+   </lightning-combobox>
+   
+   <template if:true={showType1}>
+      <my-timeline></my-timeline>
+   </template>
+   
+   <template if:true={showType2}>
+      <my-activitytimeline></my-activitytimeline>
+   </template>
+   
+   <template if:true={showType3}>
+      <my-raptorgame></my-raptorgame>
+   </template>
 
 </template>
