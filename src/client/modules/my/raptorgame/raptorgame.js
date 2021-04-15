@@ -1,13 +1,13 @@
 import { LightningElement } from 'lwc';
-import { Helper} from './raptorgamehelper';
-const helper = new Helper();
+// import { Helper} from './raptorgamehelper';
+// const helper = new Helper();
 const SPEED_GRADIENT=10;
 const DELAY=100;
+const MAX_CIRCLE_Y = '200';
+const TRIANGLE_ROTATION_ANGLE=10;
         
 export default class RaptorGame extends LightningElement {
    
-    showCircle = false;
-    showTriangle = false;
     countCircle=0;
     countTriangle=0;
     triangles = [];
@@ -21,11 +21,16 @@ export default class RaptorGame extends LightningElement {
 
     top=0;
 
+    get disableTriangleButtons(){
+        return this.triangles.length === 0;
+    }
+    get disableCircleButtons(){
+        return this.countCircle === 0;
+    }
+
     constructor(){
         super();
         console.log('constructor : I am called!');
-        this.showCircle = true;
-        this.showTriangle = true;
     }
 
     connectedCallback() {
@@ -46,14 +51,6 @@ export default class RaptorGame extends LightningElement {
         this.triangles = [...this.triangles, this.countTriangle];
     }
 
-    makeCircle(e){
-        this.showCircle = true;
-    }
-
-    makeTriangle(e){
-        this.showTriangle = true;
-    }
-
     handleClearTriangles(){
         this.triangles = [];
         this.countTriangle = 0;
@@ -63,17 +60,22 @@ export default class RaptorGame extends LightningElement {
         this.countCircle = 0;
     }
 
-    handleRotation(event){
-        
+    handleRotationCW(event){
         if(this.countTriangle === 0) return;
-        let btnName = event.target.textContent;
-        if(btnName === 'Rotate+') this.angle = this.angle + 5;
-        if(btnName === 'Rotate-') this.angle = this.angle - 5;
-        
+        this.angle = this.angle + TRIANGLE_ROTATION_ANGLE;
+        this.handleRotation();
+    }
+
+    handleRotationCCW(event){
+        if(this.countTriangle === 0) return;
+        this.angle = this.angle - TRIANGLE_ROTATION_ANGLE;
+        this.handleRotation();
+    }
+
+    handleRotation(){
         this.angle = this.angle % 360;
-        
         let elements = this.template.querySelectorAll('.triangles > p');
-        console.log(elements.length);
+        console.log(`${elements.length} triangles are rotated!`);
         elements.forEach(el => {
             el.style.transform = `rotate(${this.angle}deg)`;
         });
@@ -88,7 +90,7 @@ export default class RaptorGame extends LightningElement {
         this.triangleTimerId = setInterval(()=>{
             let elements = this.template.querySelectorAll('.triangles > p');
             this.angle = (this.angle + this.speed*SPEED_GRADIENT) % 360 ;
-            this.rpm = (1000*60*this.speed*SPEED_GRADIENT)/(360*DELAY).toFixed(2);
+            this.rpm = ((1000*60*this.speed*SPEED_GRADIENT)/(360*DELAY)).toFixed(2);
             elements.forEach(el => {
                 el.style.transform = `rotate(${this.angle}deg)`;
             });
@@ -107,18 +109,18 @@ export default class RaptorGame extends LightningElement {
 
     // eslint-disable-next-line no-unused-vars
     handleCircleMove(event){
-        //this.speed = this.speed + 1;
+        this.speed = this.speed + 1;
         if(this.countCircle === 0) return;
-        if(this.timerId){
-            clearInterval(this.timerId);
+        if(this.circleTimerId){
+            clearInterval(this.circleTimerId);
         }
         this.circleTimerId = setInterval(()=>{
             let elements = this.template.querySelectorAll('.circles > p');
-            this.top = this.top + 10;
+            this.top = this.top + 5;
             elements.forEach(el => {
                 el.style.top = `${this.top}px`;
             });
-            if(this.top === 120) this.top = 0;
+            if(this.top === MAX_CIRCLE_Y) this.top = 0;
         },DELAY);
     }
 

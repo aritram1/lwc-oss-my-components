@@ -1,11 +1,9 @@
 <template>
     <div class="container">
         <div class="banner">
-            Winners
+            {title}
         </div>
-        <div class="button">
-            <input type="button" value="Reload" onclick={reloadData}></input>
-        </div>
+        
         <div class="tdatacontainer">
             <template for:each={timelinedata} for:item="each">
                 <div class="tile" key={each.year}>
@@ -17,6 +15,9 @@
                     </div>
                 </div>
             </template>
+        </div>
+        <div class="button">
+            <input type="button" value="Reload" onclick={reloadData}></input>
         </div>
     </div>
 </template>

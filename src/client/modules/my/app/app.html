@@ -1,24 +1,35 @@
 <template>
-   
-   <lightning-combobox
-      name="typeSelector"
-      label="Type"
-      value={value}
-      placeholder="Select the App"
-      options={allApps}
-      onchange={handleClick}>
-   </lightning-combobox>
-   
-   <template if:true={showApp1}>
-      <my-timeline></my-timeline>
-   </template>
-   
-   <template if:true={showApp2}>
-      <my-activitytimeline></my-activitytimeline>
-   </template>
-   
-   <template if:true={showApp3}>
-      <my-raptorgame></my-raptorgame>
-   </template>
+   <div class="lwcAppContainer">
+      <div class="appSelector">
+         <lightning-combobox
+            name="typeSelector"
+            label="Select the App"
+            value={value}
+            placeholder="Select the App"
+            options={allApps}
+            onchange={handleClick}>
+         </lightning-combobox>
+      </div>
+         
+      <div class="lwcAppcontent">
+         <template if:true={showApp1}>
+            <div class="">
+               <my-timeline></my-timeline>
+            </div>
+         </template>
+         
+         <template if:true={showApp2}>
+            <div class="">
+               <my-activitytimeline></my-activitytimeline>
+            </div>
+         </template>
+         
+         <template if:true={showApp3}>
+            <div class="">
+               <my-raptorgame></my-raptorgame>
+            </div>
+         </template>
+      </div>
+   </div>
 
 </template>

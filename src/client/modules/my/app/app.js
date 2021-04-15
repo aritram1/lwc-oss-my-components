@@ -6,11 +6,11 @@ export default class App extends LightningElement {
     showApp2 = false;
     showApp3 = true;
     allApps=[];
-    value='App3';
+    value='';
 
     constructor(){
         super();
-        // this.value = 'App1';
+        this.value = 'App3';
         this.allApps = [
             { label: 'Timeline example 1', value: 'App1' },
             { label: 'Timeline activity Example 1', value: 'App2' },

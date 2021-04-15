@@ -22,20 +22,13 @@ export default class AddNewActivity extends LightningElement {
         
         console.log('VALUES');
         console.log('--' + this.type + '--' + this.title + '--' + this.time +  '--' + this.detail);
-        let payload = {
-            id: uuidv4(),
-            title: this.title ? this.title : 'Save Chai pe charcha',
-            time: this.time ? this.time : 'Saved 7AM Morning',
-            type: this.type ? this.type : 'Saved Chai event',
-            image: './resources/lwc.png'
-        }
-        console.log('Final => ' + JSON.stringify(payload));
+        
         this.dispatchEvent(new CustomEvent('saveactivity', {
                 detail: {
                     id: uuidv4(),
-                    title: this.title ? this.title : 'Save Chai pe charcha',
-                    time: this.time ? this.time : 'Saved 7AM Morning',
-                    type: this.type ? this.type : 'Saved Chai event',
+                    title: this.title ? this.title : 'Unknown Tea shop',
+                    time: this.time ? this.time : 'Usual',
+                    type: this.type ? this.type : 'Discussion on recent affairs',
                     image: './resources/lwc.png'
                 }
             }

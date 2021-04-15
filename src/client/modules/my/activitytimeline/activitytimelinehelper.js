@@ -19,7 +19,7 @@ export class Helper{
             id: uuidv4(),
             title: 'Processed : Tea Discussion',
             time: '7-11 AM Morning',
-            type: 'event',
+            type: 'Team Event',
             image: './resources/lwc.png',
             detail: 'Come together, have chai and charcha without any kharcha..'
         };

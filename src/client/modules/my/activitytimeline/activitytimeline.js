@@ -34,7 +34,7 @@ export default class ActivityTimeline extends LightningElement {
         this.showAddNewScreen = true;
     }
     handleAddDefault(){
-        this.timelinedata = [...this.timelinedata, helper.getDefaultTimeline()];
+        this.timelinedata = [helper.getDefaultTimeline(), ...this.timelinedata];
     }
     handleHideAddNewScreen(e){
         this.showAddNewScreen = e.detail;
