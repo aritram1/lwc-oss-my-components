@@ -15,7 +15,8 @@ export default class RaptorGame extends LightningElement {
     angle=0;
     triangleTimerId;
     circleTimerId;
-    speed=0;
+    speedTriangle=0;
+    speedCircle=0;
     rpm=0;
     currentShape='';
 
@@ -82,15 +83,15 @@ export default class RaptorGame extends LightningElement {
     }
 
     handleStartSpin(){
-        this.speed = this.speed + 1;
+        this.speedTriangle = this.speedTriangle + 1;
         if(this.countTriangle === 0) return;
         if(this.triangleTimerId){
             clearInterval(this.triangleTimerId);
         }
         this.triangleTimerId = setInterval(()=>{
             let elements = this.template.querySelectorAll('.triangles > p');
-            this.angle = (this.angle + this.speed*SPEED_GRADIENT) % 360 ;
-            this.rpm = ((1000*60*this.speed*SPEED_GRADIENT)/(360*DELAY)).toFixed(2);
+            this.angle = (this.angle + this.speedTriangle*SPEED_GRADIENT) % 360 ;
+            this.rpm = ((1000*60*this.speedTriangle*SPEED_GRADIENT)/(360*DELAY)).toFixed(2);
             elements.forEach(el => {
                 el.style.transform = `rotate(${this.angle}deg)`;
             });
@@ -105,11 +106,13 @@ export default class RaptorGame extends LightningElement {
         this.template.querySelectorAll('.triangles > p').forEach(el => {
             el.style.transform = `rotate(0deg)`;
         });
+        this.rpm = 0;
+        this.speedTriangle = 0;
     }
 
     // eslint-disable-next-line no-unused-vars
     handleCircleMove(event){
-        this.speed = this.speed + 1;
+        this.speedCircle = this.speedCircle + 1;
         if(this.countCircle === 0) return;
         if(this.circleTimerId){
             clearInterval(this.circleTimerId);
@@ -128,10 +131,12 @@ export default class RaptorGame extends LightningElement {
     handleCircleStop(event){
         console.log('Timer id->' + this.circleTimerId);
         clearInterval(this.circleTimerId);
-        this.angle = 0;
         this.template.querySelectorAll('.circles > p').forEach(el => {
             el.style.top = '0px';
         });
+        this.angle = 0;
+        this.top = 0;
+        this.speedCircle = 0;
     }
 
     // eslint-disable-next-line no-unused-vars
