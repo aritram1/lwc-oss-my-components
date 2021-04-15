@@ -8,10 +8,10 @@
         "compression": "^1.7.4",
         "express": "^4.17.1",
         "helmet": "^4.4.1",
-        "lightning-base-components": "^1.12.2-alpha"
+        "lightning-base-components": "^1.12.2-alpha",
+        "@salesforce-ux/design-system": "^2.14.3"
     },
     "devDependencies": {
-        "@salesforce-ux/design-system": "^2.14.3",
         "eslint": "^7.23.0",
         "husky": "^6.0.0",
         "lint-staged": "^10.5.4",
