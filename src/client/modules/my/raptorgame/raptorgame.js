@@ -124,8 +124,8 @@ export default class RaptorGame extends LightningElement {
 
     // eslint-disable-next-line no-unused-vars
     handleCircleStop(event){
-        console.log('Timer id->' + this.timerId);
-        clearInterval(this.timerId);
+        console.log('Timer id->' + this.circleTimerId);
+        clearInterval(this.circleTimerId);
         this.angle = 0;
         this.template.querySelectorAll('.circles > p').forEach(el => {
             el.style.top = '0px';

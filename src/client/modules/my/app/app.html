@@ -4,20 +4,29 @@
       name="typeSelector"
       label="Type"
       value={value}
-      placeholder="Select type"
-      options={allTypes}
-      onchange={handleChange}>
+      placeholder="Select the App"
+      options={allApps}
+      onclick={handleClick}>
    </lightning-combobox>
    
-   <template if:true={showType1}>
+   <!-- <lightning-combobox
+      name="typeSelector"
+      label="Type"
+      value={value}
+      placeholder="Select the App"
+      options={allApps}
+      onchange={handleChange}>
+   </lightning-combobox> -->
+   
+   <template if:true={showApp1}>
       <my-timeline></my-timeline>
    </template>
    
-   <template if:true={showType2}>
+   <template if:true={showApp2}>
       <my-activitytimeline></my-activitytimeline>
    </template>
    
-   <template if:true={showType3}>
+   <template if:true={showApp3}>
       <my-raptorgame></my-raptorgame>
    </template>
 

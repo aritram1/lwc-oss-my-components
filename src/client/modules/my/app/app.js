@@ -2,44 +2,45 @@ import { LightningElement } from 'lwc';
 import '@lwc/synthetic-shadow'; //to incorporate LWC Base components
 
 export default class App extends LightningElement {
-    showType1 = false;
-    showType2 = false;
-    showType3 = false;
-    value;
+    showApp1 = false;
+    showApp2 = false;
+    showApp3 = false;
+    allApps=[];
+    value='';
 
     constructor(){
         super();
-        this.value = 'Type1';
-        this.allTypes = [
-            { label: 'Type 1', value: 'Type1' },
-            { label: 'Type 2', value: 'Type2' },
-            { label: 'Type 3', value: 'Type3' }
+        this.value = 'App1';
+        this.allApps = [
+            { label: 'Timeline example 1', value: 'App1' },
+            { label: 'Timeline activity Example 1', value: 'App2' },
+            { label: 'CSS Demo', value: 'App3' }
         ];
     }
 
-    handleChange(e){
+    handleClick(e){
         console.log('hello');
-        this.reset();
+        // this.reset();
         this.value = e.target.value;
-        console.log('-->' + this.value);
-        switch(e.target.value){
-            case 'Type1':
-                this.showType1 = true;    
-                break;
-            case 'Type2' :
-                this.showType2 = true;    
-                break;
-            case 'Type3' :
-                this.showType3 = true;    
-                break;
-            default :
-                break;
-        }
+        // console.log('-->' + this.value);
+        // switch(e.target.value){
+        //     case 'App1':
+        //         this.showApp1 = true;    
+        //         break;
+        //     case 'App2' :lsls
+        //         this.showApp2 = true;    
+        //         break;
+        //     case 'App3' :
+        //         this.showApp3 = true;    
+        //         break;
+        //     default :
+        //         break;
+        // }
     }
 
     reset(){
-        this.showType1 = false;
-        this.showType2 = false;
-        this.showType3 = false;
+        this.showApp1 = false;
+        this.showApp2 = false;
+        this.showApp3 = false;
     }
 }
