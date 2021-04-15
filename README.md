@@ -1,5 +1,5 @@
 # My LWCOSS components
-This is a collection of HTML and LWCOSS based components [`View Live`](https://aritram1.github.io/lwc-oss-my-components/)
+This is a collection of HTML and LWCOSS based components and LWC base components off the platform. View it live [`here`](https://aritram1.github.io/lwc-oss-my-components/)
 
 # How to start?
 Start simply by cloning the repo and running `npm install` followed by `npm run watch`. This will start the project with a local development server. 
