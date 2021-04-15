@@ -1,26 +1,13 @@
 <template>
    
-   <select>
-      <option>Type 1</option>
-   </select>
-   
    <lightning-combobox
       name="typeSelector"
       label="Type"
       value={value}
       placeholder="Select the App"
       options={allApps}
-      onclick={handleClick}>
+      onchange={handleClick}>
    </lightning-combobox>
-   
-   <!-- <lightning-combobox
-      name="typeSelector"
-      label="Type"
-      value={value}
-      placeholder="Select the App"
-      options={allApps}
-      onchange={handleChange}>
-   </lightning-combobox> -->
    
    <template if:true={showApp1}>
       <my-timeline></my-timeline>

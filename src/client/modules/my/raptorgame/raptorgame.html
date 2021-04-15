@@ -4,22 +4,22 @@
             <lightning-card title="">
                 <h3 slot="title">
                     <!-- <lightning-icon icon-name="utility:actions" size="small"></lightning-icon> -->
-                    Create Right handed triangles
+                    Create Polygons
                 </h3>
                 <lightning-button-group class="button-group">
                     <lightning-button label="Create Triangle" slot="actions" onclick={handleCreateTriangle}></lightning-button>
-                    <lightning-button label="Rotate+" slot="actions" onclick={handleRotation}></lightning-button>
-                    <lightning-button label="Rotate-" slot="actions" onclick={handleRotation}></lightning-button>
-                    <lightning-button label="Clear" slot="actions" onclick={handleClearTriangles}></lightning-button>
-                    <lightning-button label="Spin" slot="actions" onclick={handleStartSpin}></lightning-button>
-                    <lightning-button label="Stop" slot="actions" onclick={handleStopSpin}></lightning-button>
-                    <lightning-button label="Change Shape" slot="actions" onclick={handleShapeChange}></lightning-button>
+                    <lightning-button label="Rotate ↩️" slot="actions" onclick={handleRotation}></lightning-button>
+                    <lightning-button label="Rotate ↪️" slot="actions" onclick={handleRotation}></lightning-button>
+                    <lightning-button label="Clear All ❎" slot="actions" onclick={handleClearTriangles}></lightning-button>
+                    <lightning-button label="Start Spin 🌀" slot="actions" onclick={handleStartSpin}></lightning-button>
+                    <lightning-button label="Stop Spin 🛑" slot="actions" onclick={handleStopSpin}></lightning-button>
+                    <lightning-button label="Change Shape ✴️" slot="actions" onclick={handleShapeChange}></lightning-button>
                 </lightning-button-group>
                 <p slot="footer">{countTriangle} triangles are created, current rotation speed around {rpm} RPM.</p>  
                 <!-- <lightning-input disabled type="number" name="input1" label="Rotate by" value={angle} onchange={handleRotation} min="0" max="100"></lightning-input> -->
                 <div class="triangles">
                     <template for:each={triangles} for:item='each'>
-                        <p data-name={each} key={each} class="slds-m-horizontal_large triangle"> </p>
+                        <p data-name={each} key={each} class="triangle"> </p>
                     </template>
                 </div>
             </lightning-card>
@@ -30,10 +30,10 @@
                 </h3>
                 
                 <lightning-button-group class="button-group">
-                    <lightning-button label="Create Circle" slot="actions" onclick={handleCreateCircle}></lightning-button>
-                    <lightning-button label="Clear" slot="actions" onclick={handleClearCircles}></lightning-button>
-                    <lightning-button label="Move" slot="actions" onclick={handleCircleMove}></lightning-button>
-                    <lightning-button label="Stop" slot="actions" onclick={handleCircleStop}></lightning-button>
+                    <lightning-button label="Create Circle ⭕️" slot="actions" onclick={handleCreateCircle}></lightning-button>
+                    <lightning-button label="Clear ❎" slot="actions" onclick={handleClearCircles}></lightning-button>
+                    <lightning-button label="Move ⬇️" slot="actions" onclick={handleCircleMove}></lightning-button>
+                    <lightning-button label="Stop 🛑" slot="actions" onclick={handleCircleStop}></lightning-button>
                 </lightning-button-group>
                 <p slot="footer">{countCircle} circles are created</p>
                 <div class="circles">
