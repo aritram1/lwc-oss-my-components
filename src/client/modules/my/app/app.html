@@ -7,7 +7,7 @@
             value={value}
             placeholder="Select the App"
             options={allApps}
-            onchange={handleClick}>
+            onchange={handleChange}>
          </lightning-combobox>
       </div>
          
@@ -26,9 +26,22 @@
          
          <template if:true={showApp3}>
             <div class="">
-               <my-raptorgame></my-raptorgame>
+               <my-cssdemo></my-cssdemo>
             </div>
          </template>
+
+         <template if:true={showApp4}>
+            <div class="">
+               <my-experimental></my-experimental>
+            </div>
+         </template>
+
+         <template if:true={showApp5}>
+            <div class="">
+               <my-loginform></my-loginform>>
+            </div>
+         </template>
+
       </div>
    </div>
 

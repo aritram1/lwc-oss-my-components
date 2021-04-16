@@ -1,0 +1,80 @@
+:host{
+   box-sizing: border-box;
+}
+
+.triangle{
+    height : 0px;
+    width : 0px;
+    /* border-top: 50px solid grey; */
+    border-right: 50px solid teal transparent;
+    border-bottom: 50px solid red;
+    border-left: 50px solid green transparent;
+    margin: 50px;
+}
+
+
+.hourglass{
+    height : 0px;
+    width : 0px;
+    border-top: 50px solid blue;
+    border-right: 50px solid teal transparent;
+    border-bottom: 50px solid red;
+    border-left: 50px solid green transparent;
+    margin: 50px;
+}
+
+.trapezium{
+    height : 0px;
+    width : 0px;
+    /* border-top: 50px solid grey; */
+    border-right: 50px solid teal transparent;
+    border-bottom: 50px solid red;
+    border-left: 50px solid green;
+    margin: 50px;
+}
+
+.pacman{
+    height : 0px;
+    width : 0px;
+    border-top: 50px solid grey;
+    border-right: 50px solid teal transparent;
+    border-bottom: 50px solid red;
+    border-left: 50px solid green;
+    margin: 50px;
+}
+
+.circle{
+    height : 80px;
+    width : 80px;
+    background-color: blue;
+    border-radius: 100%;
+    margin: 50px;
+    position: relative;
+}
+
+.container{
+    display: grid;
+    grid-gap: 5px;
+    grid-auto-flow: column;
+}
+
+.triangles{
+    display: flex;
+}
+
+.circles{
+    display: flex;
+    color: white;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.button-group{
+    display: flex;
+    flex-direction: row;
+    margin: 4px;
+}
+
+lightning-button{
+    margin: 5px;
+}
